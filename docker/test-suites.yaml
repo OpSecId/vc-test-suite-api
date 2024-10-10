@@ -1,0 +1,25 @@
+---
+volumes:
+  allure_data:
+
+services:
+  vc-data-model-2.0-test-suite:
+    build:
+      context: https://github.com/w3c/vc-data-model-2.0-test-suite.git
+    volumes:
+      - ./localConfig.cjs:/app/localConfig.cjs
+  # vc-jose-cose-test-suite:
+  #   build:
+  #     context: https://github.com/w3c/vc-jose-cose-test-suite.git
+  # vc-di-ecdsa-test-suite:
+  #   build:
+  #     context: https://github.com/w3c/vc-di-ecdsa-test-suite.git
+  # vc-di-eddsa-test-suite:
+  #   build:
+  #     context: https://github.com/w3c/vc-di-eddsa-test-suite.git
+  # vc-di-bbs-test-suite:
+  #   build:
+  #     context: https://github.com/w3c/vc-di-bbs-test-suite.git
+  # vc-bitstring-status-list-test-suite :
+  #   build:
+  #     context: https://github.com/w3c/vc-bitstring-status-list-test-suite.git

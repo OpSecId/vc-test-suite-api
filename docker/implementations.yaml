@@ -1,0 +1,22 @@
+---
+services:
+  digital-bazaar:
+    build:
+      context: ../implementations/digital-bazaar/
+      dockerfile: Dockerfile
+  # backchannel-acapy:
+  #   build:
+  #     context: https://github.com/hyperledger/aries-agent-test-harness.git#:aries-backchannels
+  #     dockerfile: acapy/Dockerfile.acapy
+  #   ports:
+  #     - 8020:8020
+  #     - 8022:8022
+  #     - 8023:8023
+  #   tty: true
+  #   stdin_open: true
+  #   entrypoint: [python, acapy/acapy_backchannel.py]
+  #   environment:
+  #     LEDGER_URL: http://test.bcovrin.vonx.io
+  #     GENESIS_URL: http://test.bcovrin.vonx.io/genesis
+  #   volumes:
+  #     - ./implementations/acapy/plugin-config.yml:/data-mount/plugin-config.yml

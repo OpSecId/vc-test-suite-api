@@ -1,0 +1,18 @@
+---
+include:
+  - ./docker/reports.yaml
+  # - ./docker/test-suites.yaml
+  - ./docker/implementations.yaml
+
+services:
+  traefik:
+    image: traefik:v3.1
+    command:
+      - --api.insecure=true
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entryPoints.web.address=:80
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
