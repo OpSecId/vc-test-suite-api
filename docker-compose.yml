@@ -1,8 +1,8 @@
 ---
 include:
-  - ./docker/reports.yaml
-  # - ./docker/test-suites.yaml
-  - ./docker/implementations.yaml
+  - ./reports/compose.yml
+  - ./test-suites/compose.yml
+  - ./implementations/compose.yml
 
 services:
   traefik:

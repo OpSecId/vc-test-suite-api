@@ -12,22 +12,22 @@ services:
       KEEP_HISTORY_LATEST: 5
       URL_PREFIX: "/api"
       MAKE_VIEWER_ENDPOINTS_PUBLIC: 1
-      SERVER_URL: 'http://allure.docker.localhost'
+      SERVER_URL: 'http://reports.docker.localhost'
     volumes:
       - allure_data:/app/allure-results
     labels:
       - traefik.enable=true
-      - traefik.http.routers.allure.rule=Host(`allure.docker.localhost`) && PathPrefix(`/api`)
+      - traefik.http.routers.allure.rule=Host(`reports.docker.localhost`) && PathPrefix(`/api`)
       - traefik.http.routers.allure.entrypoints=web
       - traefik.http.services.allure.loadbalancer.server.port=5050
 
   allure-ui:
     image: frankescobar/allure-docker-service-ui:7.0.3
     environment:
-      ALLURE_DOCKER_PUBLIC_API_URL: "http://allure.docker.localhost"
+      ALLURE_DOCKER_PUBLIC_API_URL: "http://reports.docker.localhost"
       ALLURE_DOCKER_PUBLIC_API_URL_PREFIX: "/api"
     labels:
       - traefik.enable=true
-      - traefik.http.routers.allure-ui.rule=Host(`allure.docker.localhost`)
+      - traefik.http.routers.allure-ui.rule=Host(`reports.docker.localhost`)
       - traefik.http.routers.allure-ui.entrypoints=web
       - traefik.http.services.allure-ui.loadbalancer.server.port=5252

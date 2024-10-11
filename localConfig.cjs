@@ -1,4 +1,4 @@
-const baseUrl = process.env.BASE_URL || 'http://localhost:8000';
+const baseUrl = process.env.BASE_URL || 'http://implementation:8000';
 module.exports = {
   settings: {},
   implementations: [

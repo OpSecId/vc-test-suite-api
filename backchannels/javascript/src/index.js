@@ -13,36 +13,34 @@ app.listen('8000');
 
 app.get('/health', function (req, res) {
     res.setHeader("Content-Type", "application/json");
-    res.send()
+    res.send(JSON.stringify({status: 'ok'}))
   })
 
 app.post('/credentials/issue', function (req, res) {
     res.setHeader("Content-Type", "application/json");
-    let credential = req.body.credential;
-    let options = req.body.options;
-    let vc = {};
-    let response = {
-        verifiableCredential: vc
-    };
-    res.send(JSON.stringify(response))
+    const verifiableCredential = issue_vc(
+      credential=req.body.credential,
+      options=req.body.options
+    );
+    res.send(JSON.stringify({verifiableCredential: verifiableCredential}))
   })
 
 app.post('/credentials/verify', function (req, res) {
     res.setHeader("Content-Type", "application/json");
-    let vc = req.body.verifiableCredential;
-    let options = req.body.options;
-    let verificationResponse = {};
-    let response = verificationResponse;
-    res.send(JSON.stringify(response))
+    const verificationResponse = verify_vc(
+      vc=req.body.verifiableCredential,
+      options=req.body.options
+    );
+    res.send(JSON.stringify(verificationResponse))
 })
 
 app.post('/presentations/verify', function (req, res) {
     res.setHeader("Content-Type", "application/json");
-    let vp = req.body.verifiablePresentation;
-    let options = req.body.options;
-    let verificationResponse = {};
-    let response = verificationResponse;
-    res.send(JSON.stringify(response))
+    const verificationResponse = verify_vp(
+      vp=req.body.verifiablePresentation,
+      options=req.body.options
+    );
+    res.send(JSON.stringify(verificationResponse))
     })
 
 console.log(`Server is ready!`);
