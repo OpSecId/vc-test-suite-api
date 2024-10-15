@@ -1,4 +1,4 @@
-const baseUrl = process.env.BASE_URL || 'http://implementation:8000';
+const baseUrl = process.env.BASE_URL || 'http://backchannel:8000';
 module.exports = {
   settings: {},
   implementations: [
@@ -7,7 +7,7 @@ module.exports = {
       implementation: 'My Implementation Name',
       issuers: [
         {
-          id: '',
+          id: 'did:key:123',
           endpoint: `${baseUrl}/credentials/issue`,
           tags: ['vc2.0']
         }

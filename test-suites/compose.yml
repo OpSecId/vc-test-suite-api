@@ -3,16 +3,17 @@ services:
   vc-data-model-v2-test-suite:
     container_name: vc-data-model-v2
     build:
-      context: https://github.com/w3c/vc-data-model-2.0-test-suite.git#docker
+      # context: https://github.com/w3c/vc-data-model-2.0-test-suite.git#add-input-capture
+      context: ./vc-data-model-2.0-test-suite
     depends_on:
-      - implementation
+      - backchannel
     entrypoint: ["./run.sh"]
     environment:
       PROJECT_ID: vc-data-model-v2
     volumes:
-      - ./send_results.sh:/test-suite/send_results.sh
       - ./run.sh:/test-suite/run.sh
-      - ../localConfig.cjs:/test-suite/localConfig.cjs
+      - ./send_results.sh:/test-suite/send_results.sh
+      - ./localConfig.cjs:/test-suite/localConfig.cjs
     labels:
       - traefik.enable=true
       - traefik.http.routers.vc-data-model-v2-test-suite.rule=Host(`vcdm.docker.localhost`)

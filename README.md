@@ -1,14 +1,14 @@
 # vc-test-suite-backchannels
 
 
-## Creating a new backchannel
+## Creating a new backchannel for your implementation
 
 ```
 # for python
-cp backchannels/python implementations/{my-implementation}
+cp backchannels/python implementation/
 
 # for javascript
-cp backchannels/javascript implementations/{my-implementation}
+cp backchannels/javascript implementation/
 
 ```
 
