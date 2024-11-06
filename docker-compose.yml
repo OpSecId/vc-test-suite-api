@@ -4,14 +4,14 @@ include:
   - ./test-suites/compose.yml
 
 services:
-  backchannel:
+  implementation:
     build:
       context: implementation/
     labels:
       - traefik.enable=true
-      - traefik.http.routers.backchannel.rule=Host(`backchannel.docker.localhost`)
-      - traefik.http.routers.backchannel.entrypoints=web
-      - traefik.http.services.backchannel.loadbalancer.server.port=8000
+      - traefik.http.routers.implementation.rule=Host(`implementation.docker.localhost`)
+      - traefik.http.routers.implementation.entrypoints=web
+      - traefik.http.services.implementation.loadbalancer.server.port=8000
 
   traefik:
     image: traefik:v3.1

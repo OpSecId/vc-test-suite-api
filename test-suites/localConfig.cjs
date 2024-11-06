@@ -9,17 +9,20 @@ module.exports = {
         {
           id: '',
           endpoint: `${baseUrl}/credentials/issue`,
+          options: {},
           tags: ['vc2.0']
         }
       ],
       verifiers: [{
         id: '',
         endpoint: `${baseUrl}/credentials/verify`,
+        options: {},
         tags: ['vc2.0']
       }],
       vpVerifiers: [{
         id: '',
         endpoint: `${baseUrl}/presentations/verify`,
+        options: {},
         tags: ['vc2.0']
       }]
     }

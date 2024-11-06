@@ -3,7 +3,7 @@ services:
   vc-data-model-v2-test-suite:
     build: https://github.com/w3c/vc-data-model-2.0-test-suite.git
     depends_on:
-      - backchannel
+      - implementation
     entrypoint: ["./run.sh"]
     # command: >
     #   bash -c "npm i
