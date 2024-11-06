@@ -39,7 +39,7 @@ async def issue_credential_route(request_body: IssueCredential):
 async def verify_credential_route(request_body: VerifyCredential):
     vc = request_body.model_dump()['verifiableCredential']
     options = request_body.model_dump()['options']
-    verification = issue_credential(vc, options)
+    verification = verify_credential(vc, options)
     return JSONResponse(status_code=200, content=verification)
 
 
@@ -47,7 +47,7 @@ async def verify_credential_route(request_body: VerifyCredential):
 async def verify_presentation_route(request_body: VerifyPresentation):
     vp = request_body.model_dump()['verifiablePresentation']
     options = request_body.model_dump()['options']
-    verification = issue_credential(vp, options)
+    verification = verify_presentation(vp, options)
     return JSONResponse(status_code=200, content=verification)
 
 app.include_router(api_router)

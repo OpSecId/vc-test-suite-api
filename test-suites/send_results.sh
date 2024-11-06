@@ -2,7 +2,6 @@
 
 ALLURE_RESULTS_DIRECTORY='allure-results'
 ALLURE_SERVER='http://allure:5050'
-PROJECT_ID=$PROJECT_ID
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 FILES_TO_SEND=$(ls -dp $DIR/$ALLURE_RESULTS_DIRECTORY/* | grep -v /$)

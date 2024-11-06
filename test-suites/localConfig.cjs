@@ -1,4 +1,4 @@
-const baseUrl = process.env.BASE_URL || 'http://backchannel:8000';
+const baseUrl = process.env.BASE_URL || 'https://askar.dev.opsec.id';
 module.exports = {
   settings: {},
   implementations: [
@@ -7,7 +7,7 @@ module.exports = {
       implementation: 'My Implementation Name',
       issuers: [
         {
-          id: 'did:key:123',
+          id: 'did:key:z6MkwMaVueYP9pYSTKxtRSMzgzsSkpx1wrhwdq8MEHFxtHdu',
           endpoint: `${baseUrl}/credentials/issue`,
           tags: ['vc2.0']
         }
